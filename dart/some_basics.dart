@@ -1,13 +1,12 @@
-List list = ['walid', 'siam', 'hi'];
-Map map = {'a': 1, 'b': 2, 'c': 3};
-Set set = {1, 2, 3};
+Map<String, int> map = {'a': 1, 'b': 2, 'c': 3};
 
 void main() {
-  // for (var i in list) {
-  //   print(i);
-  // }
-  
-  list.forEach((i) {
-    print(i);
-  });
+  print('$map , ${map['a']}');
+  map['d'] = 4;
+  print(map);
+  map.remove('d');
+  print(map);
+  map.addAll({'e': 5, 'f': 6});
+  map.forEach((key, value) => print('key: $key, value: $value'));
+  print('${map.containsKey('f')} , ${map.containsValue(5)}');
 }
