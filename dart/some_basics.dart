@@ -1,16 +1,11 @@
-List<String> names = ['a', 'b', 'c'];
+
 main() {
-  print(myLambda(2));
-  print(myRecursive(3));
-  names.forEach((name) => print(name));
+
+   myHOF(1, 2, (a, b) => print(a + b));
   
+
 }
 
-myLambda(int x) => x * x;
-
-myRecursive(int x) {
-  if (x == 0) {
-    return 0;
-  }
-  return x + myRecursive(x - 1);
+myHOF(int a, int b, Function f) {
+  return f(a, b);
 }
