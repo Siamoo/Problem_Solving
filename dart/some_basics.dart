@@ -1,12 +1,28 @@
 Map<String, int> map = {'a': 1, 'b': 2, 'c': 3};
 
 void main() {
-  print('$map , ${map['a']}');
+  print(map);
+  myVoid(map);
+  print(myReturn(map));
+  print(myOptional(1, b: 2, c: 3));
+  print(myOptional(1, c: 3));
+}
+
+void myVoid(Map<String, int> map) {
   map['d'] = 4;
   print(map);
-  map.remove('d');
-  print(map);
-  map.addAll({'e': 5, 'f': 6});
-  map.forEach((key, value) => print('key: $key, value: $value'));
-  print('${map.containsKey('f')} , ${map.containsValue(5)}');
 }
+
+Map<String, int> myReturn(Map<String, int> map) {
+  map['e'] = 5;
+  return map;
+}
+
+myOptional(int a, {int? b, required int c}) {
+  a = a;
+  b = b ?? 0;
+  c = c;
+  return a + b;
+}
+
+
