@@ -1,25 +1,36 @@
 main() {
-  var a = A<int, String, bool>();
-  a.info(1, 'a', true);
-  print(a.t);
-  print(a.e);
-  print(a.f);
+  Shape shape = Shape();
+  Rectangle rectangle = Rectangle();
+  Circle circle = Circle();
+  Square square = Square();
 
-  var b = A();
-  b.info(true, 1, 'b');
-  print(b.t);
-  print(b.e);
-  print(b.f);
+  List<Shape> shapes = [shape, rectangle, circle, square];
+
+  for (Shape shape in shapes) {
+    shape.info();
+  }
+}
+/// we can use abstract class 
+class Shape {      
+  info() {
+    print('Shape');
+  }
 }
 
-class A<T, E, F> {
-  late T t;
-  late E e;
-  late F f;
-  
-  info(T t, E e, F f) {
-    this.t = t;
-    this.e = e;
-    this.f = f;
+class Rectangle extends Shape {
+  info() {
+    print('Rectangle');
+  }
+}
+
+class Circle extends Shape {
+  info() {
+    print('Circle');
+  }
+}
+
+class Square extends Shape {
+  info() {
+    print('Square');
   }
 }
