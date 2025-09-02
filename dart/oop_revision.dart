@@ -1,27 +1,25 @@
-class A {
-  A() {
-    print('this is A class');
-  }
+abstract class A {
+  info();
 }
 
-class B extends A {
-  B(String name) {
-    print('from B this is $name');
-  }
+abstract class B {
+  info2();
 }
-
-class C extends B {
-  C(String name) : super(name) {
-    // no thing in C
+/// implements for multiple inheritance
+class C implements A, B { 
+  @override
+  info() {
+    print('form class C info');
   }
-}
 
-class D extends C {
-  D(String name) : super(name) {
-    print('from D this is $name');
+  @override
+  info2() {
+    print('form class C info2');
   }
 }
 
 main() {
-  D d = D('D');
+  C c = C();
+  c.info();
+  c.info2();
 }
